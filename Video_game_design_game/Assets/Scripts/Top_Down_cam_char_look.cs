@@ -39,8 +39,14 @@ public class Top_Down_cam_char_look : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100))
             {
-                character.transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
-                
+               
+
+                Vector3 direction = new Vector3(hit.point.x, transform.position.y, hit.point.z) - transform.position;
+                Quaternion toRotation = Quaternion.LookRotation(direction);
+                character.transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, speed * Time.time);
+
+
+
             }
 
 

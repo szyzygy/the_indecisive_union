@@ -147,8 +147,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69605465}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.88}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.75}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 1888842093}
   - {fileID: 754677958}
@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.02, y: 0.16}
+  m_AnchoredPosition: {x: 0.57, y: 0.29}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &69605467
@@ -1047,7 +1047,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 5, y: 1}
+  m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &962544911
 MonoBehaviour:
@@ -1069,7 +1069,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8ef95b1b0a0710942a0ab67a06173b25, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 638731ee9ea6f8d4a8e5fe3130c2c136, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1388,8 +1388,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
-  - {fileID: 1986237362}
   - {fileID: 1419170724}
+  - {fileID: 1986237362}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1729,7 +1729,7 @@ RectTransform:
   m_Children:
   - {fileID: 962544910}
   m_Father: {fileID: 1164706089}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2249,7 +2249,7 @@ Transform:
   - {fileID: 483311356}
   - {fileID: 69605466}
   m_Father: {fileID: 1164706089}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1986237363
 MonoBehaviour:
@@ -2283,4 +2283,4 @@ MonoBehaviour:
   top_camera: {fileID: 963194225}
   character: {fileID: 1986237361}
   gun_parent: {fileID: 483311355}
-  speed: 5000
+  speed: 5
