@@ -17,7 +17,8 @@ public class Top_Down_cam_char_look : MonoBehaviour
 
 
     public GameObject character;
-    public GameObject gun_paerent;
+    public GameObject gun_parent;
+    public float speed;
 
     void Start()
     {
@@ -29,6 +30,8 @@ public class Top_Down_cam_char_look : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         if (!halt_mouse_control)
         {
 
@@ -37,16 +40,22 @@ public class Top_Down_cam_char_look : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100))
             {
                 character.transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+                
             }
 
 
-            if (Input.GetMouseButtonDown(0)) { gun_paerent.GetComponent<Shooting_control>().Shoot_gun(); }
+            if (Input.GetMouseButtonDown(0)) { gun_parent.GetComponent<Shooting_control>().Shoot_gun(); }
 
         }
     }
 
 
-
+    /*
+     
+     transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, speed * Time.deltaTime);
+     
+     
+     */
 
 
 

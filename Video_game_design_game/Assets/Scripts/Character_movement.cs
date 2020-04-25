@@ -15,7 +15,7 @@ public class Character_movement : MonoBehaviour
     void Start()
     {
         cr = GetComponent<CharacterController>();
-        Cursor.visible = false;
+        //Cursor.visible = false;
 
     }
 
