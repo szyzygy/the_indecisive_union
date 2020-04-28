@@ -15,6 +15,7 @@ public class Character_movement : MonoBehaviour
     public GameObject gun_body;
     public GameObject rotator_control;
     public GameObject gun_return;
+    public GameObject audio;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,7 @@ public class Character_movement : MonoBehaviour
             {
 
                 menu_open = true;
-                move_lock = true;
+                //move_lock = true;
                 //inventory_ui.SetActive(true);
                 inventory_ui.transform.GetChild(0).GetComponent<RectTransform>().localPosition = new Vector3(0,0,0);
                 rotator_control.GetComponent<Top_Down_cam_char_look>().halt_mouse_control = true;
@@ -46,7 +47,7 @@ public class Character_movement : MonoBehaviour
             }
             else if (menu_open) {
 
-                move_lock = false;
+                //move_lock = false;
 
                 menu_open = false;
 
@@ -59,10 +60,33 @@ public class Character_movement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !menu_open) { gun_parent.GetComponent<Shooting_control>().Shoot_gun(); }
 
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
 
+            footsteps(true);
+
+        }
     }
 
-    
+    private void footsteps(bool io)
+    {
+
+        if (!audio.GetComponent<AudioSource>().isPlaying && io)
+        {
+
+            audio.GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+            audio.GetComponent<AudioSource>().PlayOneShot(audio.GetComponent<AudioSource>().clip, 1f);
+
+        }
+        if (!io)
+        {
+
+            audio.GetComponent<AudioSource>().Stop();
+
+        }
+
+
+    }
 
 
 

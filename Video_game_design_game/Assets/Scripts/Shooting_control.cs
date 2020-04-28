@@ -9,6 +9,7 @@ public class Shooting_control : MonoBehaviour
     public GameObject end_of_barrel;
     public float refire_time;
     private Transform EOB;
+    public GameObject audio;
     
     private float shot_stopwatch;
 
@@ -32,6 +33,7 @@ public class Shooting_control : MonoBehaviour
 
             shot_stopwatch = Time.time;
             Instantiate(bullet_prefab, end_of_barrel.transform);
+            audio.GetComponent<AudioSource>().PlayOneShot(audio.GetComponent<AudioSource>().clip, 1f);
         }
 
     }
