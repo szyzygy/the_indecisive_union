@@ -9,7 +9,8 @@ public class Character_movement : MonoBehaviour
     CharacterController cr;
     public float move_speed;
     public bool move_lock;
-
+    public GameObject inventory_ui;
+    public bool menu_open;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,18 @@ public class Character_movement : MonoBehaviour
         if (!move_lock)
             Move();
 
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {            
+            if (!menu_open)
+            {
+                inventory_ui.SetActive(true);
+            }
+            else if (inventory_ui.activeSelf == true)
+            {
+                inventory_ui.SetActive(false);
+            }
 
+        }
 
 
     }

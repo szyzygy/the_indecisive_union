@@ -7,7 +7,8 @@ public class mod_exchange_control : MonoBehaviour
     public GameObject player;
     public GameObject gun_parent;
     public List<GameObject> gun_components;
-    
+    public bool in_inventory;
+    public GameObject inventory;
 
     // Start is called before the first frame update
     void Start()
@@ -34,17 +35,35 @@ public class mod_exchange_control : MonoBehaviour
 
     private void OnMouseDown()
     {
-        exchange_mod(this.GetComponent<UnityEngine.UI.Image>(), 0);
+        if (in_inventory)
+        {
+            exchange_mod(this.GetComponent<UnityEngine.UI.Image>(), this.GetComponent<mod_identity_class>().component_location);
+        }
+        else {
+
+
+            add_obj_inventory(this.gameObject);
+            in_inventory = true;
+
+
+            // add code here to send the parent to inventory, need both to appear to viewer.
+            // once in inventory set the in inventory bool to true and clicking it will do a swap
+            // also add a distance check here so player cannot pick up stuff from across tha map.
+        }
+
+
+    }
+
+
+    public void add_obj_inventory(GameObject obj)
+    {
+
+        inventory.GetComponent<Inventory_manager>().inventory.Add(obj.transform.parent.gameObject);
+        inventory.GetComponent<Inventory_manager>().add_to_slot(this.GetComponent<mod_identity_class>().component_location);
+
     }
 
     //*
-    public void OnCollision(Collision collision)
-    {
 
-        if (collision.gameObject == player)
-        {
-            exchange_mod(this.GetComponent<UnityEngine.UI.Image>(), 0);
-        }
-    }
     //*/
 }
