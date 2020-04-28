@@ -7,27 +7,23 @@ public class raido_controller : MonoBehaviour
     // Start is called before the first frame update
 
     public AudioClip[] song_files;
-    public GameObject button;
-    public GameObject[] all_words;
-    public Material on_color;
-    public Material off_color;
+    
     private bool in_range;
-    private AudioSource speaker;
+    public AudioSource speaker;
     public bool active;
     public bool start_on;
-    public GameObject left;
-    public GameObject right;
-    private int i = 0;
-    public GameObject hub_raycast;
+ 
+    public int i = 0;
+    public float audio_length = 0f;
+
     
     void Start()
     {
-        speaker = this.GetComponentInChildren<AudioSource>();
+        //speaker = this.GetComponentInChildren<AudioSource>();
 
         if (start_on)
         {
-            hub_raycast = GameObject.Find("player/Main Camera");
-            button.GetComponent<Renderer>().material = on_color;
+            i = Random.Range(0, song_files.Length);
             active = true;
         }
         else
@@ -35,7 +31,7 @@ public class raido_controller : MonoBehaviour
 
 
             active = false;
-            button.GetComponent<Renderer>().material = off_color;
+            
             
         }
     }
@@ -43,17 +39,7 @@ public class raido_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(this.gameObject.transform.position, Camera.main.gameObject.transform.position);
-
-        if (distance <= 2.5f)
-        {
-            in_range = true;
-        }
-        else
-        {
-            in_range = false;
-        }
-
+       
         /*
         if (left.GetComponent<letter_select>().clicked == true)
         {
@@ -75,13 +61,30 @@ public class raido_controller : MonoBehaviour
 
         */
 
+
+
         if (active && speaker.isPlaying == false) {
 
             speaker.clip = song_files[i];
                 speaker.Play();
             
             
-            }
+        }
+        if (speaker.isPlaying) {
+
+
+            audio_length += 0.001f;
+        }
+
+
+        if (audio_length == speaker.clip.length) {
+
+            speaker.Stop();
+
+            i = Random.Range(0, song_files.Length);
+            
+
+        }
         /*
         if (hub_raycast.GetComponent<Fps_cam_look>())
         {
@@ -132,37 +135,25 @@ public class raido_controller : MonoBehaviour
     */
     public void shot() {
 
-        if (in_range)
-        {
+     
             if (active)
             {
 
                 active = false;
-                button.GetComponent<Renderer>().material = off_color;
+                
                 speaker.Pause();
-                foreach (GameObject text in all_words)
-                {
-
-                    text.GetComponent<UnityEngine.UI.Text>().enabled = false;
-
-                }
+              
             }
             else
             {
 
 
                 active = true;
-                button.GetComponent<Renderer>().material = on_color;
-                foreach (GameObject text in all_words)
-                {
-
-                    text.GetComponent<UnityEngine.UI.Text>().enabled = true;
-
-                }
+               
             }
 
 
-        }
+        
 
 
 
