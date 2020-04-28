@@ -54,47 +54,37 @@ public class Inventory_manager : MonoBehaviour
 
     }
 
-    public void add_to_slot(int x)
+    public void add_to_slot()
     {
         
         int i = 0;
         foreach (GameObject item in inventory)
         {
+            List<GameObject> hold = new List<GameObject>();
 
-            if (x == 0) { 
-                    item.transform.SetParent(Barrels[i].transform);
-                    
-
-            }
-            else if (x == 1)
+            switch (item.transform.GetChild(0).GetComponent<mod_identity_class>().component_location)
             {
-                item.transform.SetParent(reciver[i].transform);
-
-
-            }
-            else if (x == 2)
-            {
-                item.transform.SetParent(Stocks[i].transform);
-                item.transform.position = Stocks[i].transform.position;
-
-
-            }
-
-            else if (x == 3)
-            {
-                item.transform.SetParent(unders[i].transform);
-
-
+                case 0:
+                    hold = Barrels;
+                    break;
+                case 1:
+                    hold = reciver;
+                    break;
+                case 2:
+                    hold = Stocks;
+                    break;
+                case 3:
+                    hold = unders;
+                    break;
+                case 4:
+                    hold = scopes;
+                    break;
             }
 
-            else if (x == 4)
-            {
-                item.transform.SetParent(scopes[i].transform);
-
-
-            }
-
-
+            item.transform.SetParent(hold[i].transform);
+            item.transform.position = hold[i].transform.position;
+            item.GetComponentInChildren<Rigidbody>().useGravity = false;
+            //item.GetComponentInChildren<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
             i++;
         }

@@ -16,6 +16,7 @@ public class Character_movement : MonoBehaviour
     void Start()
     {
         cr = GetComponent<CharacterController>();
+        inventory_ui.GetComponent<Inventory_manager>().make_slot_list();
         //Cursor.visible = false;
 
     }
@@ -26,21 +27,33 @@ public class Character_movement : MonoBehaviour
         if (!move_lock)
             Move();
 
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {            
+        if (Input.GetKeyDown(KeyCode.Escape))                       //open or close options menu
+        {
             if (!menu_open)
             {
-                inventory_ui.SetActive(true);
+
+                menu_open = true;
+                //move_lock = true;
+                //inventory_ui.SetActive(true);
+                inventory_ui.transform.GetChild(0).GetComponent<RectTransform>().localPosition = new Vector3(0,0,0);
             }
-            else if (inventory_ui.activeSelf == true)
-            {
-                inventory_ui.SetActive(false);
+            else if (menu_open) {
+
+                //move_lock = false;
+
+                menu_open = false;
+
+                inventory_ui.transform.GetChild(0).GetComponent<RectTransform>().localPosition = new Vector3(0, 0, -500000);
+
             }
 
         }
 
 
     }
+
+    
+
 
 
     private void Move()

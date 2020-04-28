@@ -59,7 +59,7 @@ public class mod_exchange_control : MonoBehaviour
     {
 
         inventory.GetComponent<Inventory_manager>().inventory.Add(obj.transform.parent.gameObject);
-        inventory.GetComponent<Inventory_manager>().add_to_slot(this.GetComponent<mod_identity_class>().component_location);
+        inventory.GetComponent<Inventory_manager>().add_to_slot();
 
     }
 
