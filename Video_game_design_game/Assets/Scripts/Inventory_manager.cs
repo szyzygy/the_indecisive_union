@@ -12,6 +12,8 @@ public class Inventory_manager : MonoBehaviour
     public Transform U_parent;
     public Transform Sc_parent;
 
+
+    public GameObject gun_loc;
     public List<GameObject> inventory;
     public List<GameObject> reciver;
     public List<GameObject> Stocks;
@@ -57,7 +59,12 @@ public class Inventory_manager : MonoBehaviour
     public void add_to_slot()
     {
         
-        int i = 0;
+        int B = 0;
+        int R = 0;
+        int St = 0;
+        int U = 0;
+        int Sc = 0;
+
         foreach (GameObject item in inventory)
         {
             List<GameObject> hold = new List<GameObject>();
@@ -66,27 +73,53 @@ public class Inventory_manager : MonoBehaviour
             {
                 case 0:
                     hold = Barrels;
+
+                    item.transform.SetParent(hold[B].transform);
+                    item.transform.position = hold[B].transform.position;
+                    item.GetComponentInChildren<Rigidbody>().useGravity = false;
+                    B++;
                     break;
                 case 1:
                     hold = reciver;
+
+                    item.transform.SetParent(hold[R].transform);
+                    item.transform.position = hold[R].transform.position;
+                    item.GetComponentInChildren<Rigidbody>().useGravity = false;
+                    R++;
+
                     break;
                 case 2:
                     hold = Stocks;
+
+                    item.transform.SetParent(hold[St].transform);
+                    item.transform.position = hold[St].transform.position;
+                    item.GetComponentInChildren<Rigidbody>().useGravity = false;
+                    St++;
+
                     break;
                 case 3:
                     hold = unders;
+
+                    item.transform.SetParent(hold[U].transform);
+                    item.transform.position = hold[U].transform.position;
+                    item.GetComponentInChildren<Rigidbody>().useGravity = false;
+                    U++;
                     break;
                 case 4:
                     hold = scopes;
+
+
+                    item.transform.SetParent(hold[Sc].transform);
+                    item.transform.position = hold[Sc].transform.position;
+                    item.GetComponentInChildren<Rigidbody>().useGravity = false;
+                    Sc++;
                     break;
             }
 
-            item.transform.SetParent(hold[i].transform);
-            item.transform.position = hold[i].transform.position;
-            item.GetComponentInChildren<Rigidbody>().useGravity = false;
-            //item.GetComponentInChildren<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+          
+           
 
-            i++;
+            
         }
 
     }

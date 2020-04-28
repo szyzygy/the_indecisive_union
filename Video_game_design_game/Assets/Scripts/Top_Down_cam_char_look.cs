@@ -50,7 +50,7 @@ public class Top_Down_cam_char_look : MonoBehaviour
             }
 
 
-            if (Input.GetMouseButtonDown(0)) { gun_parent.GetComponent<Shooting_control>().Shoot_gun(); }
+            
 
         }
     }
