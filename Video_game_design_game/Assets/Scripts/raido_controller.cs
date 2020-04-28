@@ -14,9 +14,9 @@ public class raido_controller : MonoBehaviour
     public bool start_on;
  
     public int i = 0;
-    public float audio_length = 0f;
+    public float counter = 0;
 
-    
+
     void Start()
     {
         //speaker = this.GetComponentInChildren<AudioSource>();
@@ -64,27 +64,15 @@ public class raido_controller : MonoBehaviour
 
 
         if (active && speaker.isPlaying == false) {
-
-            speaker.clip = song_files[i];
-                speaker.Play();
-            
-            
-        }
-        if (speaker.isPlaying) {
-
-
-            audio_length += 0.001f;
-        }
-
-
-        if (audio_length == speaker.clip.length) {
-
-            speaker.Stop();
-
             i = Random.Range(0, song_files.Length);
+            speaker.clip = song_files[i];
+                speaker.PlayOneShot(speaker.clip);
             
-
+            
         }
+      
+        
+      
         /*
         if (hub_raycast.GetComponent<Fps_cam_look>())
         {
