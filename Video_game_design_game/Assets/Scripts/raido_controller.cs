@@ -14,7 +14,7 @@ public class raido_controller : MonoBehaviour
     public bool start_on;
  
     public int i = 0;
-    public float counter = 0;
+    public int counter = 0;
 
 
     void Start()
@@ -39,7 +39,7 @@ public class raido_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
         /*
         if (left.GetComponent<letter_select>().clicked == true)
         {
@@ -63,15 +63,22 @@ public class raido_controller : MonoBehaviour
 
 
 
-        if (active && speaker.isPlaying == false) {
-            i = Random.Range(0, song_files.Length);
+        if (active && speaker.isPlaying == false)
+        {
+
+
             speaker.clip = song_files[i];
-                speaker.PlayOneShot(speaker.clip);
-            
-            
+            speaker.PlayOneShot(speaker.clip);
+
+            counter++;
+
         }
-      
-        
+
+
+        if (counter == 2) {
+
+            i = Random.Range(0, song_files.Length);
+        }
       
         /*
         if (hub_raycast.GetComponent<Fps_cam_look>())
