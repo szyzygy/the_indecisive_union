@@ -9,15 +9,11 @@ public class mod_exchange_control : MonoBehaviour
     public List<GameObject> gun_components;
     public bool in_inventory;
     public GameObject inventory;
-    public List<GameObject> active_mods;
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i<= 5; i++)
-        {
-            active_mods.Add(new GameObject());
-        }
+       
 
 
     }
@@ -42,7 +38,7 @@ public class mod_exchange_control : MonoBehaviour
         if (in_inventory)
         {
             exchange_mod(this.GetComponent<UnityEngine.UI.Image>(), this.GetComponent<mod_identity_class>().component_location);
-            active_mods[this.GetComponent<mod_identity_class>().component_location] = this.gameObject;
+            gun_parent.GetComponent<Shooting_control>().List_active(this.gameObject);
         }
         else {
 

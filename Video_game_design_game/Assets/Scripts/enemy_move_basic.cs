@@ -39,7 +39,7 @@ public class enemy_move_basic : MonoBehaviour
     private void OnCollisionEnter(Collision col)
     {
 
-        print(col.gameObject.transform.GetChild(0).GetType().Name);
+        print("ahoy" + col.gameObject.transform.GetChild(0).GetType().Name);
 
         if (col.gameObject.transform.GetChild(0).GetType().Name == "Projectile_class") {
 

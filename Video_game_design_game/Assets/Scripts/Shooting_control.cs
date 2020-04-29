@@ -10,13 +10,18 @@ public class Shooting_control : MonoBehaviour
     public float refire_time;
     private Transform EOB;
     public GameObject audio;
+    public List<GameObject> active_mods;
+   
     
     private float shot_stopwatch;
 
     // Start is called before the first frame update
     void Start()
     {
-   
+        for (int i = 0; i <= 5; i++)
+        {
+            active_mods.Add(new GameObject());
+        }
     }
 
     // Update is called once per frame
@@ -38,6 +43,11 @@ public class Shooting_control : MonoBehaviour
 
     }
 
+    public void List_active(GameObject mod) {
 
+
+        active_mods[mod.GetComponent<mod_identity_class>().component_location] = mod.gameObject;
+
+    }
 
 }

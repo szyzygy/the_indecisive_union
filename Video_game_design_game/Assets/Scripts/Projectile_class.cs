@@ -24,11 +24,11 @@ public class Projectile_class : MonoBehaviour
         direction = new Vector3(0, 0, 0);
 
 
-        Debug.Log("Old: " + this.transform.rotation);
+        //Debug.Log("Old: " + this.transform.rotation);
         var randomNumberY = (float)0.5 * Random.Range(-strayFactor, strayFactor);//Only rotate about the y axis
         this.transform.Rotate(0, randomNumberY, 0, Space.World);
    
-        Debug.Log("y: " + randomNumberY + " New: " + this.transform.rotation);
+        //Debug.Log("y: " + randomNumberY + " New: " + this.transform.rotation);
     }
 
     // Update is called once per frame
