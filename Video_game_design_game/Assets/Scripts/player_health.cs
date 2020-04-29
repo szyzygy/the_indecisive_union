@@ -26,7 +26,7 @@ public class player_health : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        print(other.gameObject.tag + other.gameObject.name);
+        //print(other.gameObject.tag + other.gameObject.name);
 
         if(other.gameObject.tag == "enemy")
         {
