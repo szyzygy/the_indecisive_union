@@ -17,7 +17,7 @@ public class Boss_control : MonoBehaviour
     public GameObject bos_norm;
     public bool in_range;
     public bool travel_reached;
-    public bool health_ready;
+    public bool health_ready = false;
     public int health;
     public int frame_c = 0;
 
@@ -32,9 +32,15 @@ public class Boss_control : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(this.gameObject.transform.position, player.gameObject.transform.position);
-        if (health_ready && frame_c >=10) {
+        if (health_ready && frame_c >= 10)
+        {
 
             boss_image.GetComponent<UnityEngine.UI.Image>().sprite = bos_norm.GetComponent<UnityEngine.UI.Image>().sprite;
+            health_ready = false;
+        }
+        else if(health_ready) {
+
+            frame_c++;
         }
 
         if (distance <= 50f)
@@ -86,7 +92,7 @@ public class Boss_control : MonoBehaviour
     void cause_death()
     {
 
-
+        //boss.SetActive(false);
 
         boss.GetComponent<UnityEngine.AI.NavMeshAgent>().isStopped = true;
         boss.GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(death_point.transform.position);
@@ -97,7 +103,7 @@ public class Boss_control : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        int i = health;
+        
 
         if (other.gameObject.tag == "bullet")
         {
@@ -105,16 +111,18 @@ public class Boss_control : MonoBehaviour
             // add code to reduce health per bullet here
             // bullet is the other.gameobject
 
-            if (i <= 0)
+            if (health <= 0)
             {
                 cause_death();
             }
-            else {
-
+            else if(!health_ready){
+                
                 boss_image.GetComponent<UnityEngine.UI.Image>().sprite = bos_alt.GetComponent<UnityEngine.UI.Image>().sprite;
+                health_ready = true;
             }
 
-            i--;
+            health--;
+            
 
         }
     }
