@@ -11,6 +11,7 @@ public class Shooting_control : MonoBehaviour
     private Transform EOB;
     public GameObject audio;
     public List<GameObject> active_mods;
+    public GameObject stats;
    
     
     private float shot_stopwatch;

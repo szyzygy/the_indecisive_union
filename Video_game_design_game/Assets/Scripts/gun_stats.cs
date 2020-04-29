@@ -2,14 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mod_identity_class : MonoBehaviour
+public class gun_stats : MonoBehaviour
 {
-    public int component_location;
     public float strayFactor;
-
-
-
-
-
 
 }

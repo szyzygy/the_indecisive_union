@@ -37,8 +37,6 @@ public class mod_exchange_control : MonoBehaviour
 
         gun_components[comp].GetComponent<UnityEngine.UI.Image>().sprite = mod.sprite;
 
-
-
     }
 
 
@@ -47,7 +45,10 @@ public class mod_exchange_control : MonoBehaviour
         if (in_inventory)
         {
             exchange_mod(this.GetComponent<UnityEngine.UI.Image>(), this.GetComponent<mod_identity_class>().component_location);
-            gun_parent.GetComponent<Shooting_control>().List_active(this.gameObject);
+            //gun_parent.GetComponent<Shooting_control>().List_active(this.gameObject);
+
+            float strayFactor = this.GetComponent<mod_identity_class>().strayFactor;
+            GunStats.UpdateStats(strayFactor);
         }
         else if (in_range)
         {
