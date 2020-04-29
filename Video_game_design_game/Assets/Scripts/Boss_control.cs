@@ -18,6 +18,7 @@ public class Boss_control : MonoBehaviour
     public bool in_range;
     public bool travel_reached;
     public bool health_ready = false;
+    public bool is_dead;
     public int health;
     public int frame_c = 0;
 
@@ -62,8 +63,9 @@ public class Boss_control : MonoBehaviour
         if (boss.GetComponent<UnityEngine.AI.NavMeshAgent>().remainingDistance <= boss.GetComponent<UnityEngine.AI.NavMeshAgent>().stoppingDistance) {
 
             destination_picker(travel_points, destination);
-            spawn_attack(2);
-
+            if (!is_dead) {
+                spawn_attack(2);
+            }
 
         }
     }
