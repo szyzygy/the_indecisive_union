@@ -15,6 +15,7 @@ public class Boss_control : MonoBehaviour
     public bool in_range;
     public bool travel_reached;
     public bool spawn_ready;
+    public int health;
 
 
 
@@ -72,6 +73,37 @@ public class Boss_control : MonoBehaviour
 
 
 
+    }
+
+    void cause_death()
+    {
+
+
+
+        boss.GetComponent<UnityEngine.AI.NavMeshAgent>().isStopped = true;
+        boss.GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(death_point.transform.position);
+
+
+    }
+
+
+    public void OnTriggerEnter(Collider other)
+    {
+        int i = health;
+
+        if (other.gameObject.tag == "bullet")
+        {
+
+            // add code to reduce health per bullet here
+            // bullet is the other.gameobject
+
+            if (i <= 0) {
+                cause_death();
+            }
+
+            i--;
+
+        }
     }
 
 
