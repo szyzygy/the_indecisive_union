@@ -973,6 +973,7 @@ MonoBehaviour:
   - {fileID: 1051150454}
   in_inventory: 0
   inventory: {fileID: 413030360}
+  in_range: 0
 --- !u!114 &477808156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,6 +1148,7 @@ MonoBehaviour:
   refire_time: 0.2
   audio: {fileID: 1632712125}
   active_mods: []
+  stats: {fileID: 0}
 --- !u!1 &530000704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,6 +1445,7 @@ MonoBehaviour:
   - {fileID: 1051150454}
   in_inventory: 0
   inventory: {fileID: 413030360}
+  in_range: 0
 --- !u!114 &584702897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3254,6 +3257,7 @@ MonoBehaviour:
   - {fileID: 1051150454}
   in_inventory: 0
   inventory: {fileID: 413030360}
+  in_range: 0
 --- !u!114 &1085104766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3320,7 +3324,6 @@ GameObject:
   - component: {fileID: 1129717954}
   - component: {fileID: 1129717953}
   - component: {fileID: 1129717952}
-  - component: {fileID: 1129717958}
   m_Layer: 5
   m_Name: pickup_img
   m_TagString: Untagged
@@ -3398,6 +3401,7 @@ MonoBehaviour:
   - {fileID: 1051150454}
   in_inventory: 0
   inventory: {fileID: 413030360}
+  in_range: 0
 --- !u!114 &1129717955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3449,19 +3453,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129717950}
   m_CullTransparentMesh: 0
---- !u!114 &1129717958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129717950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38e8381e28bda4741a420c1f41b03f57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  strayFactor: 10
 --- !u!1 &1164706085
 GameObject:
   m_ObjectHideFlags: 0
@@ -4783,6 +4774,7 @@ MonoBehaviour:
   - {fileID: 1051150454}
   in_inventory: 0
   inventory: {fileID: 413030360}
+  in_range: 0
 --- !u!114 &1590534930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5588,6 +5580,7 @@ MonoBehaviour:
   - {fileID: 1051150454}
   in_inventory: 0
   inventory: {fileID: 413030360}
+  in_range: 0
 --- !u!114 &1828132609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6106,6 +6099,7 @@ MonoBehaviour:
   - {fileID: 1051150454}
   in_inventory: 0
   inventory: {fileID: 413030360}
+  in_range: 0
 --- !u!114 &1948524767
 MonoBehaviour:
   m_ObjectHideFlags: 0
