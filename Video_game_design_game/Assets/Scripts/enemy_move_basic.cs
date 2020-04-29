@@ -39,10 +39,10 @@ public class enemy_move_basic : MonoBehaviour
     private void OnCollisionEnter(Collision col)
     {
 
-        print("ahoy" + col.gameObject.transform.GetChild(0).GetType().Name);
+        print("shoyyyyyyyyyyyyyyyyyyyyyyyy" + col.gameObject.name);
+        if (col.gameObject.tag == "bullet") {
 
-        if (col.gameObject.transform.GetChild(0).GetType().Name == "Projectile_class") {
-
+            print("shoy");
             // add code here to deal units of damage to caise death
             cause_death();
 

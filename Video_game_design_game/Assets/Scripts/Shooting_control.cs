@@ -18,9 +18,9 @@ public class Shooting_control : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i <= 5; i++)
+        for (int i = 0; i < 5; i++)
         {
-            active_mods.Add(new GameObject());
+            active_mods.Add(audio);
         }
     }
 
