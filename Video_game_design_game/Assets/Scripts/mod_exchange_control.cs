@@ -9,7 +9,7 @@ public class mod_exchange_control : MonoBehaviour
     public List<GameObject> gun_components;
     public bool in_inventory;
     public GameObject inventory;
-    
+    public bool in_range;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,16 @@ public class mod_exchange_control : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float distance = Vector3.Distance(this.gameObject.transform.position, player.gameObject.transform.position);
+
+        if (distance <= 5f)
+        {
+            in_range = true;
+        }
+        else
+        {
+            in_range = false;
+        }
     }
 
     void exchange_mod(UnityEngine.UI.Image mod, int comp) {
@@ -41,12 +50,13 @@ public class mod_exchange_control : MonoBehaviour
             float strayFactor = this.GetComponent<mod_identity_class>().strayFactor;
             GunStats.UpdateStats(strayFactor);
         }
-        else {
+        else if (in_range)
+        {
 
-
-            add_obj_inventory(this.gameObject);
-            in_inventory = true;
-
+        
+                add_obj_inventory(this.gameObject);
+                in_inventory = true;
+            
 
             // add code here to send the parent to inventory, need both to appear to viewer.
             // once in inventory set the in inventory bool to true and clicking it will do a swap

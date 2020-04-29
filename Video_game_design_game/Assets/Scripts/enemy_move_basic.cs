@@ -36,6 +36,20 @@ public class enemy_move_basic : MonoBehaviour
     }
 
 
-   
+    public void OnTriggerEnter(Collider other)
+    {
+        
+
+        if (other.gameObject.tag == "bullet")
+        {
+
+            // add code to reduce health per bullet here
+            // bullet is the other.gameobject
+            cause_death();
+
+
+        }
+    }
+
 
 }
