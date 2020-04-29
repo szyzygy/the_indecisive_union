@@ -2082,6 +2082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component_location: 2
+  strayFactor: 0
 --- !u!114 &241657125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2895,6 +2896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component_location: 0
+  strayFactor: 0
 --- !u!114 &287579542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5016,7 +5018,7 @@ MonoBehaviour:
   - {fileID: 1049637388}
   - {fileID: 1172497846}
   - {fileID: 866765011}
-  in_inventory: 0
+  in_inventory: 1
   inventory: {fileID: 1836638571}
   in_range: 0
 --- !u!114 &583034884
@@ -5032,6 +5034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component_location: 4
+  strayFactor: 0
 --- !u!114 &583034885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6045,6 +6048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component_location: 1
+  strayFactor: 0
 --- !u!114 &708959647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6673,6 +6677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component_location: 3
+  strayFactor: 0
 --- !u!114 &786570611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9935,6 +9940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component_location: 2
+  strayFactor: 0
 --- !u!114 &1189640744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14385,6 +14391,7 @@ MonoBehaviour:
   refire_time: 0.2
   audio: {fileID: 610701162}
   active_mods: []
+  stats: {fileID: 0}
 --- !u!1 &1744746223 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 365808119c35c494e9866af395d5beb8,

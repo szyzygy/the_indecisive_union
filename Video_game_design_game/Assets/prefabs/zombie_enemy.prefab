@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 3154791843322744144}
   m_Layer: 5
   m_Name: zombie_enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 7128296934237235523}
   player: {fileID: 0}
+  death_point: {fileID: 0}
+  spawn_pooint: {fileID: 0}
 --- !u!195 &7128296934237235527
 NavMeshAgent:
   m_ObjectHideFlags: 0

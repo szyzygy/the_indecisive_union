@@ -6,6 +6,7 @@ TagManager:
   tags:
   - letter_click
   - bullet
+  - enemy
   layers:
   - Default
   - TransparentFX
