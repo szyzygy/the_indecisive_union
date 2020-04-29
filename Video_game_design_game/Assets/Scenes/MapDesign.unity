@@ -4285,7 +4285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 513413224}
   m_Layer: 5
-  m_Name: travel_point (0)
+  m_Name: spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4299,7 +4299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513413223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 13.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2359424525181969693}
@@ -17856,11 +17856,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 15
+  m_Speed: 5
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 300
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -18049,6 +18049,8 @@ MonoBehaviour:
   player: {fileID: 79623936}
   boss: {fileID: 3863567471812074666}
   destination: {fileID: 1661350919}
+  Spawns: {fileID: 6888096751720926603, guid: ad924877924ddda41aeec87c678a1a7a, type: 3}
+  sp_point: {fileID: 513413223}
   travel_points:
   - {fileID: 1661350919}
   - {fileID: 148334374}

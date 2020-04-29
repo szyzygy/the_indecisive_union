@@ -8,6 +8,8 @@ public class Boss_control : MonoBehaviour
     public GameObject player;
     public GameObject boss;
     public GameObject destination;
+    public GameObject Spawns;
+    public GameObject sp_point;
     public List<GameObject> travel_points;
     public bool in_range;
     public bool travel_reached;
@@ -29,21 +31,22 @@ public class Boss_control : MonoBehaviour
         {
             in_range = true;
             boss.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = player.gameObject.transform.position;
+            
         } else if (distance >= 250f) {
 
             boss.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = player.gameObject.transform.position;
+            
         }
         else
         {
             in_range = false;
             boss.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = destination.gameObject.transform.position;
         }
-
-
-        if (boss.GetComponent<RectTransform>().transform.position == destination.gameObject.transform.localPosition) {
+        
+        if (boss.GetComponent<UnityEngine.AI.NavMeshAgent>().remainingDistance <= boss.GetComponent<UnityEngine.AI.NavMeshAgent>().stoppingDistance) {
 
             destination_picker(travel_points, destination);
-
+            spawn_attack(5);
 
 
         }
@@ -54,6 +57,18 @@ public class Boss_control : MonoBehaviour
         dest.Remove(arrived);
         destination = dest[Random.Range(0, dest.Count)];
         dest.Add(arrived);
+
+
+    }
+
+    public void spawn_attack(int x) {
+
+        for (int i = 0; i <x; i++) {
+
+            Instantiate(Spawns, sp_point.transform);
+
+        }
+
 
 
     }
