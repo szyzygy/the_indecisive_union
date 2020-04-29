@@ -5,6 +5,12 @@ using UnityEngine;
 public class player_health : MonoBehaviour
 {
     public int health;
+    public GameObject death_ui;
+    public GameObject player;
+    public GameObject rotator;
+
+
+    public List<GameObject> health_ui;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +30,7 @@ public class player_health : MonoBehaviour
 
         if(other.gameObject.tag == "enemy")
         {
-
-            Debug.Log("Taking damage");
+            
             take_damage();
         }
     }
@@ -33,7 +38,8 @@ public class player_health : MonoBehaviour
     void take_damage()
     {
         health -= 1;
-        if(health <= 0)
+        health_ui[health].SetActive(false);
+        if (health <= 0)
         {
             cause_death();
         }
@@ -41,8 +47,8 @@ public class player_health : MonoBehaviour
 
     void cause_death()
     {
-        //Code for what happens on death
-        //Frowny face- restart button?
-        Debug.Log("The Player has died");
+        death_ui.SetActive(true);
+        player.GetComponent<Character_movement>().move_lock = true;
+        rotator.GetComponent<Top_Down_cam_char_look>().halt_mouse_control = true;
     }
 }
