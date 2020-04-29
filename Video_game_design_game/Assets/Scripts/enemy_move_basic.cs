@@ -36,21 +36,6 @@ public class enemy_move_basic : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision col)
-    {
-
-        print("ahoy" + col.gameObject.transform.GetChild(0).GetType().Name);
-
-        if (col.gameObject.transform.GetChild(0).GetType().Name == "Projectile_class") {
-
-            // add code here to deal units of damage to caise death
-            cause_death();
-
-
-        }
-
-
-    }
-
+   
 
 }
