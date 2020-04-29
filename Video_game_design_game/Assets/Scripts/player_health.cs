@@ -18,10 +18,14 @@ public class player_health : MonoBehaviour
         
     }
 
-    public void OnTrigger(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
+        
+        Debug.Log("The Player has died");
         if(other.gameObject.tag == "enemy")
         {
+
+            Debug.Log("Taking damage");
             take_damage();
         }
     }
