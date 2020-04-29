@@ -36,21 +36,6 @@ public class enemy_move_basic : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision col)
-    {
-
-        print("shoyyyyyyyyyyyyyyyyyyyyyyyy" + col.gameObject.name);
-        if (col.gameObject.tag == "bullet") {
-
-            print("shoy");
-            // add code here to deal units of damage to caise death
-            cause_death();
-
-
-        }
-
-
-    }
-
+   
 
 }
