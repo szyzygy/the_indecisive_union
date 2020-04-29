@@ -47,7 +47,7 @@ public class Boss_control : MonoBehaviour
         if (boss.GetComponent<UnityEngine.AI.NavMeshAgent>().remainingDistance <= boss.GetComponent<UnityEngine.AI.NavMeshAgent>().stoppingDistance) {
 
             destination_picker(travel_points, destination);
-            spawn_attack(5);
+            spawn_attack(2);
 
 
         }
