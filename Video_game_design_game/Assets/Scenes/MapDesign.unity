@@ -18068,6 +18068,7 @@ MonoBehaviour:
   - {fileID: 1864005307}
   - {fileID: 922235976}
   - {fileID: 1550532606}
+  death_point: {fileID: 1796237507}
   in_range: 0
   travel_reached: 0
   spawn_ready: 0

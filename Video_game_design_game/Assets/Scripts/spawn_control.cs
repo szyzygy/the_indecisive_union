@@ -12,6 +12,7 @@ public class spawn_control : MonoBehaviour
     {
         start_point = this.transform.parent.position;
         this.GetComponent<enemy_move_basic>().player = this.transform.parent.GetComponentInParent<Boss_control>().player;
+        this.GetComponent<enemy_move_basic>().death_point = this.transform.parent.GetComponentInParent<Boss_control>().death_point;
         this.transform.parent = null;
 
 

@@ -11,6 +11,7 @@ public class Boss_control : MonoBehaviour
     public GameObject Spawns;
     public GameObject sp_point;
     public List<GameObject> travel_points;
+    public GameObject death_point;
     public bool in_range;
     public bool travel_reached;
     public bool spawn_ready;

@@ -84,6 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5383795793286476860}
   - component: {fileID: 352936839672494343}
+  - component: {fileID: 5590461444632009483}
   - component: {fileID: 4955180534269003115}
   - component: {fileID: 2785727615278502392}
   - component: {fileID: 7621541220897812472}
@@ -133,6 +134,18 @@ MonoBehaviour:
   player: {fileID: 0}
   death_point: {fileID: 0}
   spawn_pooint: {fileID: 0}
+--- !u!114 &5590461444632009483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6888096751720926603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297c6256c3b0fec47936f8ba47a575ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &4955180534269003115
 NavMeshAgent:
   m_ObjectHideFlags: 0
