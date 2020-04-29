@@ -31,7 +31,7 @@ public class enemy_move_basic : MonoBehaviour
 
         enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().isStopped = true;
         enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(death_point.transform.position);
-
+        Destroy(this);
 
     }
 

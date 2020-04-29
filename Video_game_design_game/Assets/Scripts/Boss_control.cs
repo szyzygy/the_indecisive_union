@@ -12,10 +12,14 @@ public class Boss_control : MonoBehaviour
     public GameObject sp_point;
     public List<GameObject> travel_points;
     public GameObject death_point;
+    public GameObject boss_image;
+    public GameObject bos_alt;
+    public GameObject bos_norm;
     public bool in_range;
     public bool travel_reached;
-    public bool spawn_ready;
+    public bool health_ready;
     public int health;
+    public int frame_c = 0;
 
 
 
@@ -28,6 +32,10 @@ public class Boss_control : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(this.gameObject.transform.position, player.gameObject.transform.position);
+        if (health_ready && frame_c >=10) {
+
+            boss_image.GetComponent<UnityEngine.UI.Image>().sprite = bos_norm.GetComponent<UnityEngine.UI.Image>().sprite;
+        }
 
         if (distance <= 50f)
         {
@@ -97,8 +105,13 @@ public class Boss_control : MonoBehaviour
             // add code to reduce health per bullet here
             // bullet is the other.gameobject
 
-            if (i <= 0) {
+            if (i <= 0)
+            {
                 cause_death();
+            }
+            else {
+
+                boss_image.GetComponent<UnityEngine.UI.Image>().sprite = bos_alt.GetComponent<UnityEngine.UI.Image>().sprite;
             }
 
             i--;
