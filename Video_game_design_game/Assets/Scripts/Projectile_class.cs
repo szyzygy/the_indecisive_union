@@ -23,7 +23,7 @@ public class Projectile_class : MonoBehaviour
         this.angle_set = false;
         direction = new Vector3(0, 0, 0);
 
-        strayFactor = GunStats.strayFactor;// this.GetComponentInParent<GunStats>().strayFactor;
+        strayFactor = 45;//GunStats.strayFactor;// this.GetComponentInParent<GunStats>().strayFactor;
         //Debug.Log("Old: " + this.transform.rotation);
         var randomNumberY = (float)0.5 * Random.Range(-strayFactor, strayFactor);//Only rotate about the y axis
         this.transform.Rotate(0, randomNumberY, 0, Space.World);

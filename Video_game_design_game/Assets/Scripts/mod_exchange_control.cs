@@ -48,7 +48,7 @@ public class mod_exchange_control : MonoBehaviour
             //gun_parent.GetComponent<Shooting_control>().List_active(this.gameObject);
 
             float strayFactor = this.GetComponent<mod_identity_class>().strayFactor;
-            GunStats.UpdateStats(strayFactor);
+            //GunStats.UpdateStats(strayFactor);
         }
         else if (in_range)
         {
