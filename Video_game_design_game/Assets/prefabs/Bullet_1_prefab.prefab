@@ -107,3 +107,6 @@ MonoBehaviour:
   speed: 50
   max_distance: 100
   Damage: 0
+  angle_set: 0
+  strayFactor: 45
+  direction: {x: 0, y: 0, z: 0}
