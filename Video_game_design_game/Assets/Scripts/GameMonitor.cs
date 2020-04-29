@@ -7,14 +7,13 @@ public class GameMonitor : MonoBehaviour
 
     float startTime;
     bool spawnBoss;
-    GameObject boss_1;
+    public GameObject boss_1;
  
     void Start()
     {
         startTime = Time.time;
         spawnBoss = false;
 
-        boss_1.SetActive(false);
     }
 
     void Update()
