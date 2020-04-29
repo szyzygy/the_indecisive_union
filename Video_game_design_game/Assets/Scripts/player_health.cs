@@ -39,5 +39,6 @@ public class player_health : MonoBehaviour
     {
         //Code for what happens on death
         //Frowny face- restart button?
+        Debug.Log("The Player has died");
     }
 }

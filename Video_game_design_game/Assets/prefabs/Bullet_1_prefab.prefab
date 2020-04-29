@@ -109,7 +109,7 @@ MonoBehaviour:
   max_distance: 100
   Damage: 0
   angle_set: 0
-  strayFactor: 45
+  strayFactor: 0
   direction: {x: 0, y: 0, z: 0}
 --- !u!54 &6335912488908322350
 Rigidbody:
