@@ -6,6 +6,8 @@ public class enemy_move_basic : MonoBehaviour
 {
     public GameObject enemy;
     public GameObject player;
+    public GameObject death_point;
+    public GameObject spawn_pooint;
 
 
 
@@ -22,4 +24,33 @@ public class enemy_move_basic : MonoBehaviour
     {
         enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = player.gameObject.transform.position;
     }
+
+    void cause_death() {
+
+
+
+        enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().isStopped = true;
+        enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(death_point.transform.position);
+
+
+    }
+
+
+    private void OnCollisionEnter(Collision col)
+    {
+
+        print(col.gameObject.transform.GetChild(0).GetType().Name);
+
+        if (col.gameObject.transform.GetChild(0).GetType().Name == "Projectile_class") {
+
+            // add code here to deal units of damage to caise death
+            cause_death();
+
+
+        }
+
+
+    }
+
+
 }
