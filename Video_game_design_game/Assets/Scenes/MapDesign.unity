@@ -17781,7 +17781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeeed3907c0317f4f97fad6bec0d62d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component_location: 0
+  component_location: 1
   strayFactor: 0
 --- !u!114 &1764569646
 MonoBehaviour:

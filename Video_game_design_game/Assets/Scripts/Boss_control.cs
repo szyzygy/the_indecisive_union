@@ -98,7 +98,7 @@ public class Boss_control : MonoBehaviour
 
         boss.GetComponent<UnityEngine.AI.NavMeshAgent>().isStopped = true;
         boss.GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(death_point.transform.position);
-
+        Destroy(this);
 
     }
 
@@ -115,6 +115,7 @@ public class Boss_control : MonoBehaviour
 
             if (health <= 0)
             {
+                is_dead = true;
                 cause_death();
             }
             else if(!health_ready){
