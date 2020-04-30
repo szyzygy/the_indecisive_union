@@ -23,7 +23,7 @@ public class mod_exchange_control : MonoBehaviour
     {
         float distance = Vector3.Distance(this.gameObject.transform.position, player.gameObject.transform.position);
 
-        if (distance <= 5f)
+        if (distance <= 10f)
         {
             in_range = true;
         }

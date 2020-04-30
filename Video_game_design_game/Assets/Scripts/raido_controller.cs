@@ -75,7 +75,7 @@ public class raido_controller : MonoBehaviour
         }
 
 
-        if (counter == 2) {
+        if (counter == 4) {
 
             i = Random.Range(0, song_files.Length);
         }
