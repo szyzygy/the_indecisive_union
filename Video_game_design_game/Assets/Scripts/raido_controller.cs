@@ -8,6 +8,7 @@ public class raido_controller : MonoBehaviour
 
     public AudioClip[] song_files;
     public AudioClip victory;
+    public AudioClip Boss;
     private bool in_range;
     public AudioSource speaker;
     public bool active;
@@ -132,6 +133,13 @@ public class raido_controller : MonoBehaviour
     public void play_vic() {
         speaker.Stop();
         speaker.clip = victory;
+
+
+    }
+    public void play_boss()
+    {
+        speaker.Stop();
+        speaker.clip = Boss;
 
 
     }

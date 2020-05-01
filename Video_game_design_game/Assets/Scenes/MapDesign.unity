@@ -4741,6 +4741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss_1: {fileID: 3863567471812074666}
+  radio: {fileID: 859810657}
 --- !u!1 &439772611 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 793aa06c7396bff4f913251bc68df0fd,
@@ -10049,7 +10050,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 995943fcf5e6ce44ab16626fcab7a457, type: 3}
   - {fileID: 8300000, guid: c293bf7c5ff9c7f4e9c44dd3b88a7a8f, type: 3}
   - {fileID: 8300000, guid: 68bf9ec4852e93c4ab0c3e746de6e04e, type: 3}
-  victory: {fileID: 0}
+  victory: {fileID: 8300000, guid: 497b843f42961c540820427dc4a43e13, type: 3}
+  Boss: {fileID: 8300000, guid: eb9dceff33929f54a94cde2f61eb3f01, type: 3}
   speaker: {fileID: 859810660}
   active: 0
   start_on: 1

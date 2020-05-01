@@ -120,7 +120,7 @@ public class Boss_control : MonoBehaviour
             {
                 is_dead = true;
                 cause_death();
-                vicoty_image.SetActive(false);
+                vicoty_image.SetActive(true);
                 radio.GetComponent<raido_controller>().play_vic();
             }
             else if(!health_ready){

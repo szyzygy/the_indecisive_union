@@ -8,6 +8,7 @@ public class GameMonitor : MonoBehaviour
     float startTime;
     bool spawnBoss;
     public GameObject boss_1;
+    public GameObject radio;
  
     void Start()
     {
@@ -22,6 +23,7 @@ public class GameMonitor : MonoBehaviour
         if (!spawnBoss  && Time.time - startTime > 80){
             spawnBoss = true;
             boss_1.SetActive(true);
+            radio.GetComponent<raido_controller>().play_boss();
             Debug.Log("Boss is Spawning");
         }
     }
