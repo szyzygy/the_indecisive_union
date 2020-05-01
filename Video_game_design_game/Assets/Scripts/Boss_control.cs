@@ -122,6 +122,7 @@ public class Boss_control : MonoBehaviour
                 cause_death();
                 vicoty_image.SetActive(true);
                 radio.GetComponent<raido_controller>().play_vic();
+                Time.timeScale = 0;
             }
             else if(!health_ready){
                 

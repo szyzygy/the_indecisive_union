@@ -132,7 +132,9 @@ public class raido_controller : MonoBehaviour
 
     public void play_vic() {
         speaker.Stop();
+
         speaker.clip = victory;
+        speaker.PlayOneShot(speaker.clip);
 
 
     }
@@ -140,6 +142,7 @@ public class raido_controller : MonoBehaviour
     {
         speaker.Stop();
         speaker.clip = Boss;
+        speaker.PlayOneShot(speaker.clip);
 
 
     }
