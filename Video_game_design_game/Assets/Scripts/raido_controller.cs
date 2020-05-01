@@ -7,7 +7,7 @@ public class raido_controller : MonoBehaviour
     // Start is called before the first frame update
 
     public AudioClip[] song_files;
-    
+    public AudioClip victory;
     private bool in_range;
     public AudioSource speaker;
     public bool active;
@@ -128,6 +128,14 @@ public class raido_controller : MonoBehaviour
         }
     }
     */
+
+    public void play_vic() {
+        speaker.Stop();
+        speaker.clip = victory;
+
+
+    }
+
     public void shot() {
 
      

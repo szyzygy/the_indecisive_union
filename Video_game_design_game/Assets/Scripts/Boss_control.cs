@@ -13,6 +13,8 @@ public class Boss_control : MonoBehaviour
     public List<GameObject> travel_points;
     public GameObject death_point;
     public GameObject boss_image;
+    public GameObject vicoty_image;
+    public GameObject radio;
     public GameObject bos_alt;
     public GameObject bos_norm;
     public bool in_range;
@@ -100,6 +102,7 @@ public class Boss_control : MonoBehaviour
         boss.GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(death_point.transform.position);
         Destroy(this);
 
+
     }
 
 
@@ -117,6 +120,8 @@ public class Boss_control : MonoBehaviour
             {
                 is_dead = true;
                 cause_death();
+                vicoty_image.SetActive(false);
+                radio.GetComponent<raido_controller>().play_vic();
             }
             else if(!health_ready){
                 
